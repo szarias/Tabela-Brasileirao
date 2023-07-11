@@ -11,10 +11,16 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+#app{
+    width: fit-content;
+    margin: auto;
+    padding-top: 50px;
+}
 #cards{
     display: flex;
     flex-direction: column;
     gap: 32px;
+
 }
 .card{
     padding: 32px 23px;
@@ -55,4 +61,44 @@ img{
     align-items: center;
     justify-content: space-between;
     
+}
+.card ul li + li{
+    padding-top: 24px;
+    border-top: 1px solid #323238;
+}
+.card ul li strong{
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 125%;
+    color: #e1e1e6;
+}
+.card h2:hover,
+.card ul li strong:hover,
+.card ul li img:hover{
+    transform: scale(1.1);
+}
+.card h2,
+.card ul li strong,
+.card ul li img{
+    transition: transform 0.3s;
+}
+.card{
+    opacity: 0;
+    animation: apper 0.2s forwards;
+}
+@keyframes apper{
+    0%{
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@media (min-width: 700px){
+    #cards{
+        max-width: 670px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }
